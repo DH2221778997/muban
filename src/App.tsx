@@ -6,7 +6,6 @@ import { Button } from "antd";
 import Login from "./login/Login";
 function App() {
   const [val, setVal] = useState(true);
-
   return (
     <>
       <Button onClick={() => setVal(!val)}>toggle</Button>
