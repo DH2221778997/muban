@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import usePrevious from '../hooks/usePrevious';
 
 const UsePreviousDemo = () => {
-  console.log('demo start')
+  console.log('demo start');
   const [count, setCount] = useState(0);
-  const prevCount = usePrevious(count);
-  
+  const prevCount = usePrevious(count, -1);
 
   return (
     <div>
@@ -17,6 +16,6 @@ const UsePreviousDemo = () => {
       </p>
     </div>
   );
-}
+};
 
-export default UsePreviousDemo
+export default UsePreviousDemo;
