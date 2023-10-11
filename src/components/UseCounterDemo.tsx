@@ -1,18 +1,46 @@
-import React from 'react'
-import useCounter from '../hooks/useCounter'
-import { Button } from 'antd'
+import React from 'react';
+import useCounter from '../hooks/useCounter';
 
 const UseCounterDemo = () => {
-  const {count, increase, decrease,extra,setExtra} = useCounter(0)
+  const [current, { inc, dec, set, reset }] = useCounter(100, { min: 1, max: 10 });
+
   return (
-    <>
-    <>{extra}</>
-      <Button onClick={() => setExtra(extra => extra + 5)}>extra</Button>
-      <Button onClick={() => increase(5)}>+</Button>
-      {count}
-      <Button onClick={() => decrease(3)}>-</Button>
-    </>
-  )
-}
+    <div>
+      <p>{current} [max: 10; min: 1;]</p>
+      <div>
+        <button
+          type="button"
+          onClick={() => {
+            inc();
+          }}
+          style={{ marginRight: 8 }}
+        >
+          inc()
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            dec();
+          }}
+          style={{ marginRight: 8 }}
+        >
+          dec()
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            set(3);
+          }}
+          style={{ marginRight: 8 }}
+        >
+          set(3)
+        </button>
+        <button type="button" onClick={reset} style={{ marginRight: 8 }}>
+          reset()
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default UseCounterDemo
