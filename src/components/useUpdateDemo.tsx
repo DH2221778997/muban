@@ -6,7 +6,7 @@ const UseUpdateDemo = () => {
 
   return (
     <>
-      <div>Time: {Date.now()}</div>
+      <div ref={}>Time: {Date.now()}</div>
       <button onClick={update}>Update</button>
     </>
   );
