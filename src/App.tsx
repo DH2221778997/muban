@@ -24,6 +24,9 @@ import FormDemo7 from "./antdform/FormDemo7";
 import FormDemo8 from "./antdform/FormDemo8";
 import FormDemo9 from "./antdform/FormDemo9";
 import FormDemo10 from "./antdform/FormDemo10";
+import TabDemo1 from "./antdform/TabDemo1";
+import CascadeDemo1 from "./antdform/CascadeDemo1";
+import LastIdCascader from "./antdform/LastIdCascader";
 
 
 

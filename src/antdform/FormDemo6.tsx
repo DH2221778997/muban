@@ -16,28 +16,17 @@ interface PriceInputProps {
 }
 
 const PriceInput: React.FC<PriceInputProps> = ({ value ={}, onChange}) => {
-  const [number,setNumber] = useState(-1000)
-  const [currency,setCurrency] = useState<Currency>('dollar')
-
-  const onValuesChange = (changedValue) => {
-    onChange?.({number,currency,...changedValue})
+  const onInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    onChange?.({...value, number:Number(e.target.value)})
   }
-
-  const onNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newNumber = Number(e.target.value)
-    setNumber(newNumber)
-    onValuesChange({number:newNumber})
-  }
-
-  const onCurrencyChange = (val) => {
-    setCurrency(val)
-    onValuesChange({currency:val})
+  const onSelectChange = (val: Currency) => {
+    onChange?.({...value, currency: val})
   }
 
   return (
     <span>
-      <Input style={{width:100}} value={number} onChange={onNumberChange} />
-      <Select style={{width:80,margin:'0 8px'}} value={currency} onChange={onCurrencyChange}>
+      <Input style={{width:100}}  value={value.number} onChange={onInputChange}/>
+      <Select style={{width:80,margin:'0 8px'}} value={value.currency} onChange={onSelectChange}>
         <Option value='rmb'>RMB</Option>
         <Option value='dollar'>Dollar</Option>
       </Select>
