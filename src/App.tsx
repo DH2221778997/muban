@@ -27,6 +27,9 @@ import FormDemo10 from "./antdform/FormDemo10";
 import TabDemo1 from "./antdform/TabDemo1";
 import CascadeDemo1 from "./antdform/CascadeDemo1";
 import LastIdCascader from "./antdform/LastIdCascader";
+import ColumnSelect from "./antdform/ColumnSelect";
+import DndDemo1 from "./antdform/DndDemo1";
+import DndDemo2 from "./antdform/DndDemo2";
 
 
 
@@ -34,7 +37,7 @@ function App() {
   
   return (
     <div style={{width:'80%',height:'100%',margin:'0 auto',border:'1px solid black'}}>
-      <FormDemo10 />
+      <DndDemo2 />
     </div>
   )
 }
